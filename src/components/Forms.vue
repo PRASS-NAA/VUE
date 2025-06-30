@@ -50,6 +50,11 @@ function changeBtnText() {
     return
   }
 }
+
+function respondChild(data)
+{
+  window.alert(data);
+}
 </script>
 
 <template>
@@ -77,7 +82,7 @@ function changeBtnText() {
     </div>
     <div>
         <button @click="changeBtnText" id="toggleBtn">{{ btnText }}</button>
-      <List v-show="!toggle" :users="users"/>
+      <List v-if="!toggle" :users="users" @respond-parent="respondChild"/>
     </div>
   </div>    
 </template>

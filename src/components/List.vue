@@ -1,5 +1,11 @@
 <script setup>
 defineProps(['users'])
+
+const emit = defineEmits(['respond-parent']);
+
+function sendMessage(){
+  emit('respond-parent', "Table succesffully Listed Users !! ");
+}
 </script>
 
 <template>
@@ -26,6 +32,7 @@ defineProps(['users'])
             </tr>
         </tbody>
     </table>
+    <button @click="sendMessage">Notify Parent</button>
 </template>
 
 <style scoped>
